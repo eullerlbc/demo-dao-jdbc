@@ -31,9 +31,15 @@ public class Program {
 			System.out.println(obj);
 		}
 		
-		System.out.println("\n=== Teste: seller Insert ===");
+		System.out.println("\n=== Teste4: seller Insert ===");
 		Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, department);
 		sellerdao.insert(newSeller);
 		System.out.println("Inserted! New ID = " + newSeller.getId());	
+		
+		System.out.println("\n=== Teste5: seller Update ===");
+		seller = sellerdao.findById(1);
+		seller.setName("Martha Wayne");
+		sellerdao.update(seller);
+		System.out.println("Update Completed");
 	}
 }
